@@ -11,3 +11,8 @@ Demo
 Install
 ----------
 
+
+Credits
+-------
+
+Thanks to [@chrisdrackett](http://twitter.com/chrisdrackett) for the lovely icon.
