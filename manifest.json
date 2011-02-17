@@ -1,0 +1,22 @@
+{
+  "name": "GitHub Clone",
+  "version": "0.1",
+  "description": "Allows to clone repositories to your disk right from the GitHub website.",
+  "icons": { "128": "logo.png" },
+  "background_page": "background.html",
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["github-clone.js"]
+	}
+  ],
+  "permissions": [
+    "tabs",
+	"http://github.com/*"
+  ],
+  "plugins": [
+    {
+      "path": "githubclone.plugin"
+    }
+  ]
+}

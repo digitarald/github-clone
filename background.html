@@ -1,0 +1,11 @@
+<embed type="application/x-githubclone" id="cloneRepository">
+<script>
+chrome.extension.onRequest.addListener(function(data, sender, callback){
+	if (!data || !data.URL) return;
+	
+	var folder = localStorage.getItem('folder') || '~/Desktop/';
+
+	// NPAPI goes here!
+	var success = document.getElementById("cloneRepository").clone(folder, data.URL);
+});
+</script>
