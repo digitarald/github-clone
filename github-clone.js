@@ -1,4 +1,11 @@
 (function(){
+
+if (document.querySelector('span#github-clone-repository')) return;
+
+var description = document.querySelector('p#url_description');
+if (!description) return;
+
+// Utility
 var setStyle = function(element, style){
 	for (var key in style)
 		element.style[key] = style[key];
@@ -9,6 +16,7 @@ var addListeners = function(element, listeners){
 		element.addEventListener(key, listeners[key], false);
 };
 
+// Images
 var hover = chrome.extension.getURL('icon-hover.png'),
 	icon = 'url(' + chrome.extension.getURL('icon.png') + ')',
 	iconHover = 'url(' + hover + ')';
@@ -16,11 +24,7 @@ var hover = chrome.extension.getURL('icon-hover.png'),
 // Old school preloading
 new Image().src = hover;
 
-if (document.querySelector('span#github-clone-repository')) return;
-
-var description = document.querySelector('p#url_description');
-if (!description) return;
-
+// Element
 var element = document.createElement('span');
 element.id = 'github-clone-repository';
 element.classList.add('clippy-tooltip');
@@ -59,6 +63,7 @@ addListeners(element, {
 
 description.parentNode.insertBefore(element, description);
 
+// Add tooltip
 var script = document.createElement('script');
 script.src = chrome.extension.getURL('addTipsy.js');
 script.type = 'text/javascript';
