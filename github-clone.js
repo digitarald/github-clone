@@ -27,8 +27,8 @@ var tipsy = function(){
 };
 
 // Images
-var hover = chrome.extension.getURL('icon-hover.png'),
-	icon = 'url(' + chrome.extension.getURL('icon.png') + ')',
+var hover = chrome.extension.getURL('Images/icon-hover.png'),
+	icon = 'url(' + chrome.extension.getURL('Images/icon.png') + ')',
 	iconHover = 'url(' + hover + ')';
 
 // Old school preloading
