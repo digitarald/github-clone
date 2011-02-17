@@ -1,0 +1,97 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+
+	font-family: "Helvetica Neue", Tahoma, sans-serif;
+	font-weight: normal;
+	font-size: 12px;
+	color: #111;
+	background: url(Images/background.png);
+}
+
+div.head {
+	z-index: 2;
+	position: relative;
+	height: 21px;
+	padding: 5px;
+	overflow: hidden;
+	background-color: #f2f5f6;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f2f5f6), color-stop(100%, #e5e8e9));
+	background-image: linear-gradient(top, #f2f5f6 0%, #e5e8e9 100%);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 2px 1px 1px 5px 0;
+	box-shadow: rgba(0, 0, 0, 0.1) 0 2px 2px 1px 1px 5px 0;
+}
+
+a {
+	display: inline-block;
+	padding: 4px;
+	outline: 0;
+	color: #4791d9;
+	text-decoration: underline;
+	background: transparent;
+	border: 0;
+	border-radius: 4px;
+	-webkit-transition-duration: 0.25s;
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transform: scale(1) rotate(0);
+}
+
+a:hover {
+	background: #4791d9;
+	text-decoration: none;
+	color: #fff;
+	-webkit-transform: scale(1.05) rotate(-1deg);
+}
+
+a:nth-child(2n):hover {
+	-webkit-transform: scale(1.05) rotate(1deg);
+}
+
+div.content {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	text-align: center;
+
+	font-size: 3em;
+}
+
+label {
+	color: #a647db;
+	text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.7);
+}
+
+input {
+	outline: 0;
+	width: 50%;
+	font-family: "Helvetica Neue", Tahoma, sans-serif;
+	font-weight: normal;
+	font-size: 0.75em;
+	text-align: center;
+
+	margin: 25px;
+	padding: 5px;
+	border: 0;
+	-webkit-transition-duration: 1s;
+	-webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+}
+
+input:focus {
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Currently broken in Chrome */
+input::-webkit-input-placeholder {
+	text-align: center;
+}

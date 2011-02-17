@@ -3,63 +3,34 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Options for GitHub-Clone</title>
-	<style type="text/css">
-		html, body {
-			height: 100%;
-		}
-		
-		body {
-			margin: 0;
-
-			font-family: "Helvetica Neue", Tahoma, sans-serif;
-			font-weight: normal;
-			font-size: 2em;
-			color: #a647db;
-			background: url(Images/background.png);
-			
-			display: -webkit-box;
-			-webkit-box-pack: center;
-			-webkit-box-align: center;
-			text-align: center;
-		}
-
-		input {
-			width: 50%;
-			font-family: "Helvetica Neue", Tahoma, sans-serif;
-			font-weight: normal;
-			font-size: 0.75em;
-			text-align: center;
-
-			margin: 25px;
-			padding: 5px;
-			border: 0;
-			-webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
-			border-radius: 10px;
-		}
-
-		/* Currently broken in Chrome */
-		input::-webkit-input-placeholder {
-			text-align: center;
-		}
-	</style>
+	<link rel="stylesheet" media="all" type="text/css" href="options.css" />
 </head>
 <body>
-<div>
-	<label>Folder for GitHub repositories</label>
-	<input type="text" id="folderInput" placeholder="~/Desktop/" name="folder" />
-</div>
-<script type="text/javascript">
-(function(){
+	<div class="head">
+		<span style="float: right;">
+			<a href="https://github.com/cpojer/github-clone">Fork on GitHub</a>
+		</span>
 
-var key = 'folder',
-	element = document.querySelector('#folderInput');
+		<b>GitHub-Clone by @cpojer.</b> Follow me on <a href="http://github.com/cpojer">GitHub</a> <a href="http://twitter.com/cpojer">Twitter</a>
+	</div>
+	<div class="content">
+		<div>
+			<label>Folder for GitHub repositories</label>
+			<input type="text" id="folderInput" placeholder="~/Desktop/" name="folder" />
+		</div>
+	</div>
+	<script type="text/javascript">
+	(function(){
 
-element.value = localStorage.getItem(key);
-element.addEventListener('input', function(){
-	localStorage.setItem(key, element.value);
-}, false);
+	var key = 'folder',
+		element = document.querySelector('#folderInput');
 
-})();
-</script>
+	element.value = localStorage.getItem(key);
+	element.addEventListener('input', function(){
+		localStorage.setItem(key, element.value);
+	}, false);
+
+	})();
+	</script>
 </body>
 </html>
