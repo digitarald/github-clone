@@ -7,5 +7,6 @@ chrome.extension.onRequest.addListener(function(data, sender, callback){
 
 	// NPAPI goes here!
 	var success = document.getElementById("cloneRepository").clone(folder, data.URL);
+	callback(success);
 });
 </script>

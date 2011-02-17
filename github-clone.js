@@ -16,6 +16,16 @@ var addListeners = function(element, listeners){
 		element.addEventListener(key, listeners[key], false);
 };
 
+// Add tooltip
+var tipsy = function(){
+	var script = document.createElement('script'),
+		head = document.querySelector('head');
+
+	script.src = chrome.extension.getURL('updateTipsy.js');
+	script.type = 'text/javascript';
+	head.appendChild(script);
+};
+
 // Images
 var hover = chrome.extension.getURL('icon-hover.png'),
 	icon = 'url(' + chrome.extension.getURL('icon.png') + ')',
@@ -25,10 +35,19 @@ var hover = chrome.extension.getURL('icon-hover.png'),
 new Image().src = hover;
 
 // Element
-var element = document.createElement('span');
+var element = document.createElement('span'),
+	title = 'clone to disk',
+	over;
+
 element.id = 'github-clone-repository';
 element.classList.add('clippy-tooltip');
-element.setAttribute('original-title', 'clone to disk');
+
+var setTitle = function(text){
+	element.setAttribute('original-title', text || title);
+	tipsy();
+};
+
+setTitle();
 
 setStyle(element, {
 	backgroundImage: icon,
@@ -40,13 +59,16 @@ setStyle(element, {
 // ToDo somehow add tipsy
 
 addListeners(element, {
+	
 	mouseover: function(){
+		over = true;
 		setStyle(element, {
 			backgroundImage: iconHover
 		});
 	},
 
 	mouseout: function(){
+		over = false;
 		setStyle(element, {
 			backgroundImage: icon
 		});
@@ -55,18 +77,35 @@ addListeners(element, {
 	click: function(event){
 		event.preventDefault();
 
+		var clone = 'cloning',
+			dots = '';
+
+		element.classList.remove('removeTipsy');
+		element.classList.add('hasTipsy');
+		var timer = setInterval(function(){
+			setTitle(clone + dots);
+			dots += '.';
+			if (dots.length > 3) dots = '';
+		}, 300);
+
 		chrome.extension.sendRequest({
 			URL: document.querySelector('input#url_field').value
-		}, function(){});
+		}, function(success){
+			clearInterval(timer);
+			if (success) setTitle('Successfully cloned!');
+			
+			setTimeout(function(){
+				if (!over){
+					element.classList.add('removeTipsy');
+					element.classList.remove('hasTipsy');
+				}
+				setTitle();
+			}, 1500);
+		});
 	}
+
 });
 
 description.parentNode.insertBefore(element, description);
-
-// Add tooltip
-var script = document.createElement('script');
-script.src = chrome.extension.getURL('addTipsy.js');
-script.type = 'text/javascript';
-document.querySelector('head').appendChild(script);
 
 })();
