@@ -22,6 +22,7 @@ Either clone this repository and load it as unpacked extension in Google Chrome 
 Notes
 -----
 
+* You need to have git installed on your computer (obviously!).
 * Safari and possibly Firefox support are coming
 * Security enhancements are in the works
 
