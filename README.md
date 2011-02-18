@@ -22,11 +22,17 @@ Either clone this repository and load it as unpacked extension in Google Chrome 
 Notes
 -----
 
+* If you have any suggestions for improvements, just open a GitHub Issue.
 * You need to have git installed on your computer (obviously!).
 * Safari and possibly Firefox support are coming
 * Security enhancements are in the works
 
 Please note that currently there are no security checks in place on the C++ side. The plugin gains the same rights as your user has. While only accessible by the extension itself, there are potential security issues. Please consider this plugin a proof-of-concept and only consider it public once it appears on the chrome extension gallery. Use this plugin at your own risk. You cannot call me responsible if something bad happens to you or your Mac. As long as this paragraph is in place, this plugin is not recommended for general use. You have been warned.
+
+Develop
+-------
+
+The NPAPI plugin was created using [FireBreath](http://www.firebreath.org) and the source is provided in PluginSource in case someone wants to improve the plugin or build it for Windows/Linux. I honestly have no idea if simply moving the source to the FireBreath projects folder will be enough to build. Does anyone know how to import a project in FireBreath?
 
 Credits
 -------
