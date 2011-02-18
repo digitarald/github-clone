@@ -5,6 +5,7 @@
   "icons": { "128": "Images/logo.png" },
   "background_page": "background.html",
   "options_page": "options.html",
+  "update_url": "http://cpojer.net/github-clone/update.xml",
   "content_scripts": [
     {
       "matches": ["https://github.com/*"],
