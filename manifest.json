@@ -1,6 +1,6 @@
 {
   "name": "GitHub Clone",
-  "version": "0.1",
+  "version": "0.2",
   "description": "Clone repositories to your disk right from the GitHub website.",
   "icons": { "128": "Images/logo.png" },
   "background_page": "background.html",
