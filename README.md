@@ -25,9 +25,8 @@ Notes
 * If you have any suggestions for improvements, just open a GitHub Issue.
 * You need to have git installed on your computer (obviously!).
 * Safari and possibly Firefox support are coming
-* Security enhancements are in the works
 
-Please note that currently there are no security checks in place on the C++ side. The plugin gains the same rights as your user has. While only accessible by the extension itself, there are potential security issues. Please consider this plugin a proof-of-concept and only consider it public once it appears on the chrome extension gallery. Use this plugin at your own risk. You cannot call me responsible if something bad happens to you or your Mac. As long as this paragraph is in place, this plugin is not recommended for general use. You have been warned.
+Please note that currently there are only some security checks in place on the C++ side. The plugin gains the same rights as your user has. While only accessible by the extension itself, there are potential security risks. Please only consider this plugin public once it appears on the chrome extension gallery. Use this plugin at your own risk. You cannot call the creator responsible if something bad happens to you or your Mac. As long as this paragraph is in place, this plugin is not recommended for general use. You have been warned.
 
 Develop
 -------
