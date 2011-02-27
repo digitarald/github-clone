@@ -1,8 +1,10 @@
 (function(){
 
-if (document.querySelector('span#github-clone-repository')) return;
+var ƒ = document.querySelector.bind(document);
 
-var description = document.querySelector('p#url_description');
+if (ƒ('span#github-clone-repository')) return;
+
+var description = ƒ('p#url_description');
 if (!description) return;
 
 // Utility
@@ -19,7 +21,7 @@ var addListeners = function(element, listeners){
 // Add tooltip
 var tipsy = function(){
 	var script = document.createElement('script'),
-		head = document.querySelector('head');
+		head = ƒ('head');
 
 	script.src = chrome.extension.getURL('updateTipsy.js');
 	script.type = 'text/javascript';
@@ -89,10 +91,10 @@ addListeners(element, {
 		}, 300);
 
 		chrome.extension.sendRequest({
-			URL: document.querySelector('input#url_field').value
+			URL: ƒ('input#url_field').value
 		}, function(success){
 			clearInterval(timer);
-			if (success) setTitle('Successfully cloned!');
+			setTitle(success ? 'Successfully cloned!' : 'Cloning failed');
 			
 			setTimeout(function(){
 				if (!over){
